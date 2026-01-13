@@ -20,10 +20,7 @@
       line-height: 1.7;
     }
 
-    a {
-      color: #eaeaea;
-      text-decoration: none;
-    }
+    a { color: #eaeaea; text-decoration: none; }
 
     .container {
       max-width: 920px;
@@ -40,6 +37,12 @@
       letter-spacing: 0.3px;
       line-height: 1.15;
       margin-bottom: 10px;
+      transition: letter-spacing 0.25s ease, opacity 0.25s ease;
+    }
+
+    h1:hover {
+      letter-spacing: 0.45px;
+      opacity: 0.95;
     }
 
     h2 {
@@ -56,9 +59,7 @@
       line-height: 1.7;
     }
 
-    section {
-      margin-bottom: 100px;
-    }
+    section { margin-bottom: 100px; }
 
     /* ===== ANIMATIONS ===== */
 
@@ -89,7 +90,7 @@
 
     .work-item {
       border-bottom: 1px solid #2f2f2f;
-      padding: 28px 0;
+      padding: 40px 0;
     }
 
     .work-item h3 {
@@ -97,13 +98,37 @@
       font-weight: 500;
       margin-bottom: 8px;
       line-height: 1.4;
+      transition: letter-spacing 0.25s ease, opacity 0.25s ease;
+    }
+
+    .work-item h3:hover {
+      letter-spacing: 0.4px;
+      opacity: 0.9;
     }
 
     .work-meta {
       font-size: 13px;
       color: #9a9a9a;
-      margin-bottom: 10px;
-      line-height: 1.4;
+      margin-bottom: 18px;
+    }
+
+    /* ===== SNAPSHOT ===== */
+
+    .snapshot {
+      margin: 24px 0 24px;
+      max-width: 720px;
+    }
+
+    .snapshot img {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      opacity: 0.92;
+      transition: opacity 0.4s ease;
+    }
+
+    .snapshot img:hover {
+      opacity: 1;
     }
 
     .work-desc {
@@ -121,10 +146,6 @@
       max-width: 680px;
     }
 
-    .cta p {
-      margin-bottom: 24px;
-    }
-
     .buttons {
       display: flex;
       gap: 16px;
@@ -135,10 +156,11 @@
       border: 1px solid #5a5a5a;
       padding: 12px 22px;
       font-size: 14px;
-      transition: all 0.3s ease;
+      transition: letter-spacing 0.25s ease, background 0.25s ease;
     }
 
     .btn:hover {
+      letter-spacing: 0.6px;
       background-color: #eaeaea;
       color: #0f0f0f;
     }
@@ -149,149 +171,118 @@
       margin-top: 80px;
     }
 
-    /* ===== RESPONSIVE TRACKING & LINE HEIGHT ===== */
-
-    @media (max-width: 1024px) {
-      h1 {
-        font-size: 42px;
-        letter-spacing: 0.2px;
-        line-height: 1.12;
-      }
-
-      h2 {
-        line-height: 1.35;
-      }
-
-      p {
-        line-height: 1.65;
-      }
-    }
+    /* ===== RESPONSIVE ===== */
 
     @media (max-width: 768px) {
-      h1 {
-        font-size: 38px;
-        letter-spacing: 0.1px;
-        line-height: 1.1;
-      }
-
-      h2 {
-        font-size: 17px;
-        letter-spacing: 0.05px;
-        line-height: 1.3;
-      }
-
-      p {
-        line-height: 1.6;
-      }
+      h1 { font-size: 38px; letter-spacing: 0.1px; line-height: 1.1; }
+      p { line-height: 1.6; }
     }
 
     @media (max-width: 480px) {
-      h1 {
-        font-size: 32px;
-        letter-spacing: 0;
-        line-height: 1.08;
-      }
-
-      h2 {
-        font-size: 16px;
-        letter-spacing: 0;
-        line-height: 1.3;
-      }
-
-      p {
-        line-height: 1.6;
-      }
+      h1 { font-size: 32px; letter-spacing: 0; line-height: 1.08; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <!-- HERO -->
-    <section class="fade-up" data-delay="0">
-      <h1>Hebes Zamudio</h1>
-      <h2>Lead Designer · Branding · Comunicación Visual Estratégica</h2>
-    </section>
+  <!-- HERO -->
+  <section class="fade-up" data-delay="0">
+    <h1>Hebes Zamudio</h1>
+    <h2>Lead Designer · Branding · Comunicación Visual Estratégica</h2>
+  </section>
 
-    <!-- ABOUT -->
-    <section class="about fade-up" data-delay="120">
-      <p>
-        Diseño sistemas visuales para marcas y proyectos que necesitan claridad,
-        coherencia y dirección. Trabajo en branding, identidad visual y comunicación
-        interna para proyectos inmobiliarios, hoteleros y corporativos.
-      </p>
-      <p>
-        Mi enfoque no está en la pieza aislada, sino en la estructura visual que
-        sostiene procesos, comunicación y decisiones a largo plazo.
-      </p>
-    </section>
+  <!-- ABOUT -->
+  <section class="about fade-up" data-delay="120">
+    <p>
+      Diseño sistemas visuales para marcas y proyectos que necesitan claridad,
+      coherencia y dirección. Mi trabajo se enfoca en identidad visual,
+      comunicación interna y universos gráficos escalables.
+    </p>
+  </section>
 
-    <!-- SELECTED WORK -->
-    <section class="selected-work fade-up" data-delay="240">
-      <h2>Selected Work</h2>
+  <!-- SELECTED WORK -->
+  <section class="selected-work fade-up" data-delay="240">
+    <h2>Selected Work</h2>
 
-      <div class="work-item">
-        <h3>MB Resort Orlando</h3>
-        <div class="work-meta">Branding · Identidad Visual · Comunicación Interna</div>
-        <div class="work-desc">
-          Desarrollo de sistema visual y universo gráfico para proyecto inmobiliario
-          de alto nivel, enfocado en posicionamiento, material comercial y alineación
-          de equipos internos.
-        </div>
+    <!-- PROJECT -->
+    <div class="work-item">
+      <h3>MB Resort Orlando</h3>
+      <div class="work-meta">Branding · Identidad Visual · Comunicación Interna</div>
+
+      <div class="snapshot">
+        <img src="images/mb-resort.jpg" alt="MB Resort Orlando snapshot">
       </div>
 
-      <div class="work-item">
-        <h3>MB Hotel</h3>
-        <div class="work-meta">Branding · Propuesta Visual</div>
-        <div class="work-desc">
-          Construcción de identidad visual y lineamientos gráficos para proyecto
-          hotelero, estableciendo una narrativa visual clara y escalable.
-        </div>
+      <div class="work-desc">
+        Desarrollo de sistema visual integral para proyecto inmobiliario
+        de alto nivel, alineando narrativa de marca, material comercial
+        y comunicación interna.
+      </div>
+    </div>
+
+    <!-- PROJECT -->
+    <div class="work-item">
+      <h3>MB Hotel</h3>
+      <div class="work-meta">Branding · Propuesta Visual</div>
+
+      <div class="snapshot">
+        <img src="images/mb-hotel.jpg" alt="MB Hotel snapshot">
       </div>
 
-      <div class="work-item">
-        <h3>MB Limitless Summit 2025</h3>
-        <div class="work-meta">Dirección Creativa · Sistema Visual</div>
-        <div class="work-desc">
-          Dirección creativa y desarrollo de la línea gráfica integral del evento,
-          asegurando coherencia estética y narrativa en todos los puntos de contacto.
-        </div>
+      <div class="work-desc">
+        Construcción del universo visual y lineamientos gráficos para
+        proyecto hotelero en desarrollo.
       </div>
-    </section>
+    </div>
 
-    <!-- CTA -->
-    <section class="cta fade-up" data-delay="360">
-      <p>¿Buscas claridad visual para tu marca o proyecto? Conversemos.</p>
-      <div class="buttons">
-        <a class="btn" href="https://wa.me/5219381410042" target="_blank">WhatsApp</a>
-        <a class="btn" href="https://www.linkedin.com/in/hebes-zamudio-739047101" target="_blank">LinkedIn</a>
-        <a class="btn" href="https://www.behance.net/imaginariostudio" target="_blank">Behance</a>
+    <!-- PROJECT -->
+    <div class="work-item">
+      <h3>MB Limitless Summit 2025</h3>
+      <div class="work-meta">Dirección Creativa · Sistema Visual</div>
+
+      <div class="snapshot">
+        <img src="images/mb-summit.jpg" alt="MB Limitless Summit snapshot">
       </div>
-    </section>
 
-    <footer>
-      Mérida, Yucatán, México
-    </footer>
+      <div class="work-desc">
+        Dirección creativa y desarrollo de la línea gráfica del evento,
+        asegurando coherencia estética en todos los puntos de contacto.
+      </div>
+    </div>
 
-  </div>
+  </section>
 
-  <!-- Scroll Animations -->
-  <script>
-    const elements = document.querySelectorAll('.fade-up');
+  <!-- CTA -->
+  <section class="cta fade-up" data-delay="360">
+    <p>¿Buscas claridad visual para tu marca o proyecto? Conversemos.</p>
+    <div class="buttons">
+      <a class="btn" href="https://wa.me/5219381410042" target="_blank">WhatsApp</a>
+      <a class="btn" href="https://www.linkedin.com/in/hebes-zamudio-739047101" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://www.behance.net/imaginariostudio" target="_blank">Behance</a>
+    </div>
+  </section>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const delay = entry.target.getAttribute('data-delay') || 0;
-          entry.target.style.transitionDelay = `${delay}ms`;
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
+  <footer>Mérida, Yucatán, México</footer>
 
-    elements.forEach(el => observer.observe(el));
-  </script>
+</div>
+
+<script>
+  const elements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.getAttribute('data-delay') || 0;
+        entry.target.style.transitionDelay = `${delay}ms`;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>

@@ -1,99 +1,221 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hebes Zamudio | Lead Visual Strategist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #050505; --text: #ffffff; --accent: #d4af37; --dim: #808080;
-            --font-editorial: 'Playfair Display', serif; --font-ui: 'Inter', sans-serif;
-        }
-        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        html, body { 
-            background: var(--bg); color: var(--text); font-family: var(--font-ui); 
-            margin: 0; padding: 0; overflow-x: hidden; scrollbar-width: none;
-        }
-        body::-webkit-scrollbar { display: none; }
-        
-        nav { 
-            position: fixed; top: 0; width: 100%; z-index: 1000; 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 25px 5%; background: rgba(5,5,5,0.8); backdrop-filter: blur(10px);
-        }
-        .logo-nav { font-family: var(--font-editorial); font-size: 1rem; font-weight: 700; letter-spacing: 0.1em; }
-        
-        /* HERO */
-        header { height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; }
-        h1 { font-family: var(--font-editorial); font-size: clamp(3rem, 8vw, 7rem); line-height: 0.9; margin: 0; }
+  <meta charset="UTF-8" />
+  <title>Hebes Zamudio | Lead Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        /* ABOUT SECTION (NUEVA) */
-        .about-section { padding: 100px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; border-top: 1px solid #151515; }
-        .about-title { font-family: var(--font-editorial); font-size: 2.5rem; font-style: italic; color: var(--accent); }
-        .about-text { font-size: 1.2rem; line-height: 1.8; color: var(--dim); font-weight: 300; }
-        .about-text b { color: #fff; font-weight: 500; }
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
 
-        /* PROJECTS */
-        .project-section { padding: 80px 10%; }
-        .project-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
-        .img-container { background: #111; aspect-ratio: 16/10; overflow: hidden; border: 1px solid #222; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .cta-wa { border: 1px solid var(--accent); padding: 8px 18px; color: var(--accent); text-decoration: none; font-size: 0.7rem; }
-        
-        @media (max-width: 900px) { .about-section, .project-grid { grid-template-columns: 1fr; gap: 40px; } }
-    </style>
+    a {
+      color: #eaeaea;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: auto;
+      padding: 90px 24px;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #9a9a9a;
+      margin-bottom: 48px;
+    }
+
+    section {
+      margin-bottom: 100px;
+    }
+
+    /* Fade + Micro Delay Animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* About */
+    .about p {
+      max-width: 680px;
+      font-size: 16px;
+      color: #d6d6d6;
+      margin-bottom: 20px;
+    }
+
+    /* Selected Work */
+    .selected-work {
+      border-top: 1px solid #2f2f2f;
+      padding-top: 48px;
+    }
+
+    .work-item {
+      border-bottom: 1px solid #2f2f2f;
+      padding: 28px 0;
+    }
+
+    .work-item h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .work-meta {
+      font-size: 13px;
+      color: #9a9a9a;
+      margin-bottom: 10px;
+    }
+
+    .work-desc {
+      font-size: 14px;
+      color: #bdbdbd;
+      max-width: 680px;
+    }
+
+    /* CTA */
+    .cta {
+      border-top: 1px solid #2f2f2f;
+      padding-top: 48px;
+      max-width: 680px;
+    }
+
+    .cta p {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid #5a5a5a;
+      padding: 12px 22px;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #eaeaea;
+      color: #0f0f0f;
+    }
+
+    footer {
+      font-size: 12px;
+      color: #6f6f6f;
+      margin-top: 80px;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
 
-    <nav>
-        <div class="logo-nav">HEBES ZAMUDIO</div>
-        <a href="https://wa.me/529381410042" class="cta-wa">CONTACT</a>
-    </nav>
-
-    <header>
-        <p style="color:var(--accent); letter-spacing:0.4em; text-transform:uppercase; font-size:0.7rem; margin-bottom:20px;">Lead Visual Strategist</p>
-        <h1>Engineering<br>Exclusivity</h1>
-    </header>
-
-    <section class="about-section">
-        <div class="about-title">La visión detrás del impacto.</div>
-        <div class="about-text">
-            Como <b>Lead Visual Strategist</b>, mi enfoque trasciende el diseño convencional. Me especializo en la <b>ingeniería de marca</b> para mercados de alto patrimonio y Real Estate AAA. <br><br>
-            Mi trabajo consiste en transformar activos técnicos y visiones arquitectónicas en <b>narrativas de deseo</b>, garantizando que cada punto de contacto visual acelere la toma de decisiones y consolide la autoridad de mis clientes en el mercado global.
-        </div>
+    <!-- HERO -->
+    <section class="fade-up" data-delay="0">
+      <h1>Hebes Zamudio</h1>
+      <h2>Lead Designer · Branding · Comunicación Visual Estratégica</h2>
     </section>
 
-    <main>
-        <section class="project-section">
-            <div class="project-grid">
-                <div class="img-container">
-                    <img src="orlando.jpg" alt="Orlando Project">
-                </div>
-                <div class="text-area">
-                    <h2 style="font-family:var(--font-editorial); font-size:2rem; font-style:italic;">Orlando Luxury Development</h2>
-                    <p style="color:var(--dim); line-height:1.6;">Estrategia visual para la comercialización de activos premium en Florida.</p>
-                </div>
-            </div>
-        </section>
+    <!-- ABOUT -->
+    <section class="about fade-up" data-delay="120">
+      <p>
+        Diseño sistemas visuales para marcas y proyectos que necesitan claridad,
+        coherencia y dirección. Trabajo en branding, identidad visual y comunicación
+        interna para proyectos inmobiliarios, hoteleros y corporativos.
+      </p>
+      <p>
+        Mi enfoque no está en la pieza aislada, sino en la estructura visual que
+        sostiene procesos, comunicación y decisiones a largo plazo.
+      </p>
+    </section>
 
-        <section class="project-section">
-            <div class="project-grid" style="direction:rtl;">
-                <div class="img-container">
-                    <img src="limitless.jpg" alt="Limitless Summit">
-                </div>
-                <div class="text-area" style="direction:ltr;">
-                    <h2 style="font-family:var(--font-editorial); font-size:2rem; font-style:italic;">Limitless Summit</h2>
-                    <p style="color:var(--dim); line-height:1.6;">Arquitectura visual para experiencias de marca a escala global.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- SELECTED WORK -->
+    <section class="selected-work fade-up" data-delay="240">
+      <h2>Selected Work</h2>
 
-    <footer style="padding:100px 10%; text-align:center; opacity:0.4; font-size:0.7rem; letter-spacing:0.2em;">
-        HEBES ZAMUDIO | IMAGINARIO STUDIO © 2026
+      <div class="work-item">
+        <h3>MB Resort Orlando</h3>
+        <div class="work-meta">Branding · Identidad Visual · Comunicación Interna</div>
+        <div class="work-desc">
+          Desarrollo de sistema visual y universo gráfico para proyecto inmobiliario
+          de alto nivel, enfocado en posicionamiento, material comercial y alineación
+          de equipos internos.
+        </div>
+      </div>
+
+      <div class="work-item">
+        <h3>MB Hotel</h3>
+        <div class="work-meta">Branding · Propuesta Visual</div>
+        <div class="work-desc">
+          Construcción de identidad visual y lineamientos gráficos para proyecto
+          hotelero, estableciendo una narrativa visual clara y escalable.
+        </div>
+      </div>
+
+      <div class="work-item">
+        <h3>MB Limitless Summit 2025</h3>
+        <div class="work-meta">Dirección Creativa · Sistema Visual</div>
+        <div class="work-desc">
+          Dirección creativa y desarrollo de la línea gráfica integral del evento,
+          asegurando coherencia estética y narrativa en todos los puntos de contacto.
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta fade-up" data-delay="360">
+      <p>¿Buscas claridad visual para tu marca o proyecto? Conversemos.</p>
+      <div class="buttons">
+        <a class="btn" href="https://wa.me/5219381410042" target="_blank">WhatsApp</a>
+        <a class="btn" href="https://www.linkedin.com/in/hebes-zamudio-739047101" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://www.behance.net/imaginariostudio" target="_blank">Behance</a>
+      </div>
+    </section>
+
+    <footer>
+      Mérida, Yucatán, México
     </footer>
 
+  </div>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    const elements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay') || 0;
+          entry.target.style.transitionDelay = `${delay}ms`;
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    elements.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

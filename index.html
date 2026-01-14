@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Hebes Zamudio · Portfolio</title>
+<title>Hebes Zamudio · Archivo Visual</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -14,45 +14,43 @@ body {
 }
 
 .container {
-  max-width: 920px;
+  max-width: 1000px;
   margin: auto;
   padding: 80px 24px;
 }
 
-h2 {
-  font-size: 16px;
-  color: #9a9a9a;
-  margin-bottom: 24px;
+h1 {
+  font-size: 18px;
   font-weight: 400;
+  color: #9a9a9a;
+  margin-bottom: 32px;
 }
 
-.archive-list {
-  list-style: none;
-  padding: 0;
+.categories {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 22px;
   font-size: 14px;
+  margin-bottom: 40px;
   color: #bdbdbd;
-  cursor: pointer;
 }
 
-.archive-list li {
+.categories span {
+  cursor: pointer;
   transition: opacity .25s ease;
 }
 
-.archive-list li:hover {
+.categories span:hover {
   opacity: .6;
 }
 
-.archive-gallery {
-  margin-top: 36px;
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
   gap: 16px;
 }
 
-.archive-gallery img {
+.gallery img {
   width: 100%;
   display: block;
   cursor: pointer;
@@ -60,7 +58,7 @@ h2 {
   transition: opacity .3s ease;
 }
 
-.archive-gallery img:hover {
+.gallery img:hover {
   opacity: 1;
 }
 
@@ -72,7 +70,7 @@ h2 {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .lightbox img {
@@ -85,112 +83,99 @@ h2 {
 <body>
 <div class="container">
 
-<section class="archive">
-  <h2>Archive</h2>
+<h1>Archive</h1>
 
-  <ul class="archive-list">
-    <li data-category="Comunicacion Interna">Comunicación Interna</li>
-    <li data-category="Eventos">Eventos</li>
-    <li data-category="IA">IA</li>
-    <li data-category="Limitless">Limitless</li>
-    <li data-category="Logos">Logos</li>
-    <li data-category="Material de Venta">Material de Venta</li>
-    <li data-category="Mockups">Mockups</li>
-    <li data-category="Planos">Planos</li>
-    <li data-category="Presentaciones">Presentaciones</li>
-    <li data-category="Redes Sociales">Redes Sociales</li>
-    <li data-category="Video">Video</li>
-  </ul>
+<div class="categories">
+  <span data-cat="ci">Comunicación Interna</span>
+  <span data-cat="eventos">Eventos</span>
+  <span data-cat="ia">IA</span>
+  <span data-cat="limitless">Limitless</span>
+  <span data-cat="logos">Logos</span>
+  <span data-cat="venta">Material de Venta</span>
+  <span data-cat="mockups">Mockups</span>
+  <span data-cat="planos">Planos</span>
+  <span data-cat="presentaciones">Presentaciones</span>
+  <span data-cat="redes">Redes Sociales</span>
+  <span data-cat="video">Video</span>
+</div>
 
-  <div class="archive-gallery" id="gallery"></div>
-</section>
+<div class="gallery" id="gallery"></div>
 
 </div>
 
-<!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <img id="lightboxImg">
 </div>
 
 <script>
-/*
-  IMPORTANTE:
-  Solo agrega o quita archivos aquí.
-  Respeta exactamente nombres y extensiones.
-*/
-
-const BASE_PATH = "assets/images/Portafolio/";
-
-const archive = {
-  "Comunicacion Interna": [
-    "ci-01.jpg",
-    "ci-02.jpg"
-  ],
-  "Eventos": [
-    "evento-01.jpg",
-    "evento-02.jpg"
-  ],
-  "IA": [
-    "ia-01.jpg"
-  ],
-  "Limitless": [
-    "limitless-01.jpg"
-  ],
-  "Logos": [
-    "logo-01.png",
-    "logo-02.png"
-  ],
-  "Material de Venta": [
-    "venta-01.jpg",
-    "venta-02.jpg"
-  ],
-  "Mockups": [
-    "mockup-01.jpg"
-  ],
-  "Planos": [
-    "plano-01.jpg"
-  ],
-  "Presentaciones": [
-    "ppt-01.jpg"
-  ],
-  "Redes Sociales": [
-    "rs-01.jpg",
-    "rs-02.jpg"
-  ],
-  "Video": [
-    "video-cover-01.jpg"
-  ]
-};
-
 const gallery = document.getElementById("gallery");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 
-document.querySelectorAll(".archive-list li").forEach(item => {
-  item.addEventListener("click", () => {
-    const category = item.dataset.category;
+/* 
+  RUTAS ESCRITAS DE FORMA SEGURA
+  👉 aquí NO hay concatenaciones peligrosas
+*/
+
+const data = {
+  ci: [
+    "assets/images/Portafolio/Comunicacion Interna/ci-01.jpg",
+    "assets/images/Portafolio/Comunicacion Interna/ci-02.jpg"
+  ],
+  eventos: [
+    "assets/images/Portafolio/Eventos/evento-01.jpg"
+  ],
+  ia: [
+    "assets/images/Portafolio/IA/ia-01.jpg"
+  ],
+  limitless: [
+    "assets/images/Portafolio/Limitless/limitless-01.jpg"
+  ],
+  logos: [
+    "assets/images/Portafolio/Logos/logo-01.png",
+    "assets/images/Portafolio/Logos/logo-02.png"
+  ],
+  venta: [
+    "assets/images/Portafolio/Material de Venta/venta-01.jpg"
+  ],
+  mockups: [
+    "assets/images/Portafolio/Mockups/mockup-01.jpg"
+  ],
+  planos: [
+    "assets/images/Portafolio/Planos/plano-01.jpg"
+  ],
+  presentaciones: [
+    "assets/images/Portafolio/Presentaciones/ppt-01.jpg"
+  ],
+  redes: [
+    "assets/images/Portafolio/Redes Sociales/rs-01.jpg"
+  ],
+  video: [
+    "assets/images/Portafolio/Video/video-cover-01.jpg"
+  ]
+};
+
+document.querySelectorAll(".categories span").forEach(item => {
+  item.onclick = () => {
+    const key = item.dataset.cat;
     gallery.innerHTML = "";
 
-    if (!archive[category]) return;
-
-    archive[category].forEach(file => {
+    data[key].forEach(src => {
       const img = document.createElement("img");
-      img.src = `${BASE_PATH}${category}/${file}`;
+      img.src = src;
       img.loading = "lazy";
 
       img.onclick = () => {
-        lightboxImg.src = img.src;
+        lightboxImg.src = src;
         lightbox.style.display = "flex";
       };
 
       gallery.appendChild(img);
     });
-  });
+  };
 });
 
-lightbox.onclick = () => {
-  lightbox.style.display = "none";
-};
+lightbox.onclick = () => lightbox.style.display = "none";
 </script>
 
 </body>

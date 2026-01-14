@@ -1,278 +1,196 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Hebes Zamudio | Lead Designer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<title>Hebes Zamudio · Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Playfair Display -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  background: #0f0f0f;
+  color: #eaeaea;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Helvetica, Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: #eaeaea;
-      line-height: 1.7;
-    }
+.container {
+  max-width: 920px;
+  margin: auto;
+  padding: 80px 24px;
+}
 
-    a { color: #eaeaea; text-decoration: none; }
+h2 {
+  font-size: 16px;
+  color: #9a9a9a;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
 
-    .container {
-      max-width: 920px;
-      margin: auto;
-      padding: 90px 24px;
-    }
+.archive-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: 14px;
+  color: #bdbdbd;
+  cursor: pointer;
+}
 
-    /* ===== TYPOGRAPHY ===== */
+.archive-list li {
+  transition: opacity .25s ease;
+}
 
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: 46px;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      line-height: 1.15;
-      margin-bottom: 10px;
-      transition: letter-spacing 0.25s ease, opacity 0.25s ease;
-    }
+.archive-list li:hover {
+  opacity: .6;
+}
 
-    h1:hover {
-      letter-spacing: 0.45px;
-      opacity: 0.95;
-    }
+.archive-gallery {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 16px;
+}
 
-    h2 {
-      font-size: 18px;
-      font-weight: 400;
-      color: #9a9a9a;
-      line-height: 1.4;
-      margin-bottom: 48px;
-    }
+.archive-gallery img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  opacity: .9;
+  transition: opacity .3s ease;
+}
 
-    p {
-      font-size: 16px;
-      color: #d6d6d6;
-      line-height: 1.7;
-    }
+.archive-gallery img:hover {
+  opacity: 1;
+}
 
-    section { margin-bottom: 100px; }
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,15,15,.96);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 
-    /* ===== ANIMATIONS ===== */
-
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .fade-up.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===== ABOUT ===== */
-
-    .about p {
-      max-width: 680px;
-      margin-bottom: 20px;
-    }
-
-    /* ===== SELECTED WORK ===== */
-
-    .selected-work {
-      border-top: 1px solid #2f2f2f;
-      padding-top: 48px;
-    }
-
-    .work-item {
-      border-bottom: 1px solid #2f2f2f;
-      padding: 40px 0;
-    }
-
-    .work-item h3 {
-      font-size: 18px;
-      font-weight: 500;
-      margin-bottom: 8px;
-      line-height: 1.4;
-      transition: letter-spacing 0.25s ease, opacity 0.25s ease;
-    }
-
-    .work-item h3:hover {
-      letter-spacing: 0.4px;
-      opacity: 0.9;
-    }
-
-    .work-meta {
-      font-size: 13px;
-      color: #9a9a9a;
-      margin-bottom: 18px;
-    }
-
-    /* ===== SNAPSHOT ===== */
-
-    .snapshot {
-      margin: 24px 0;
-      max-width: 720px;
-    }
-
-    .snapshot img {
-      width: 100%;
-      display: block;
-      border-radius: 2px;
-      opacity: 0.92;
-      transition: opacity 0.4s ease;
-    }
-
-    .snapshot img:hover {
-      opacity: 1;
-    }
-
-    .work-desc {
-      font-size: 14px;
-      color: #bdbdbd;
-      max-width: 680px;
-      line-height: 1.6;
-    }
-
-    /* ===== CTA ===== */
-
-    .cta {
-      border-top: 1px solid #2f2f2f;
-      padding-top: 48px;
-      max-width: 680px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border: 1px solid #5a5a5a;
-      padding: 12px 22px;
-      font-size: 14px;
-      transition: letter-spacing 0.25s ease, background 0.25s ease;
-    }
-
-    .btn:hover {
-      letter-spacing: 0.6px;
-      background-color: #eaeaea;
-      color: #0f0f0f;
-    }
-
-    footer {
-      font-size: 12px;
-      color: #6f6f6f;
-      margin-top: 80px;
-    }
-
-    /* ===== RESPONSIVE ===== */
-
-    @media (max-width: 768px) {
-      h1 { font-size: 38px; letter-spacing: 0.1px; line-height: 1.1; }
-      p { line-height: 1.6; }
-    }
-
-    @media (max-width: 480px) {
-      h1 { font-size: 32px; letter-spacing: 0; line-height: 1.08; }
-    }
-  </style>
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+</style>
 </head>
 
 <body>
 <div class="container">
 
-  <!-- HERO -->
-  <section class="fade-up" data-delay="0">
-    <h1>Hebes Zamudio</h1>
-    <h2>Lead Designer · Branding · Comunicación Visual Estratégica</h2>
-  </section>
+<section class="archive">
+  <h2>Archive</h2>
 
-  <!-- ABOUT -->
-  <section class="about fade-up" data-delay="120">
-    <p>
-      Diseño sistemas visuales para marcas y proyectos que necesitan claridad,
-      coherencia y dirección. Mi trabajo se enfoca en identidad visual,
-      comunicación interna y universos gráficos escalables.
-    </p>
-  </section>
+  <ul class="archive-list">
+    <li data-category="Comunicacion Interna">Comunicación Interna</li>
+    <li data-category="Eventos">Eventos</li>
+    <li data-category="IA">IA</li>
+    <li data-category="Limitless">Limitless</li>
+    <li data-category="Logos">Logos</li>
+    <li data-category="Material de Venta">Material de Venta</li>
+    <li data-category="Mockups">Mockups</li>
+    <li data-category="Planos">Planos</li>
+    <li data-category="Presentaciones">Presentaciones</li>
+    <li data-category="Redes Sociales">Redes Sociales</li>
+    <li data-category="Video">Video</li>
+  </ul>
 
-  <!-- SELECTED WORK -->
-  <section class="selected-work fade-up" data-delay="240">
-    <h2>Selected Work</h2>
-
-    <div class="work-item">
-      <h3>MB Resort Orlando</h3>
-      <div class="work-meta">Branding · Identidad Visual · Comunicación Interna</div>
-      <div class="snapshot">
-        <img src="assets/images/mb-resort.jpg" alt="MB Resort Orlando">
-      </div>
-      <div class="work-desc">
-        Desarrollo de sistema visual integral para proyecto inmobiliario
-        de alto nivel, alineando narrativa de marca, material comercial
-        y comunicación interna.
-      </div>
-    </div>
-
-    <div class="work-item">
-      <h3>MB Hotel</h3>
-      <div class="work-meta">Branding · Propuesta Visual</div>
-      <div class="snapshot">
-        <img src="assets/images/mb-hotel.jpg" alt="MB Hotel">
-      </div>
-      <div class="work-desc">
-        Construcción del universo visual y lineamientos gráficos para
-        proyecto hotelero en desarrollo.
-      </div>
-    </div>
-
-    <div class="work-item">
-      <h3>MB Limitless Summit 2025</h3>
-      <div class="work-meta">Dirección Creativa · Sistema Visual</div>
-      <div class="snapshot">
-        <img src="assets/images/mb-summit.jpg" alt="MB Limitless Summit 2025">
-      </div>
-      <div class="work-desc">
-        Dirección creativa y desarrollo de la línea gráfica del evento,
-        asegurando coherencia estética en todos los puntos de contacto.
-      </div>
-    </div>
-
-  </section>
-
-  <!-- CTA -->
-  <section class="cta fade-up" data-delay="360">
-    <p>¿Buscas claridad visual para tu marca o proyecto? Conversemos.</p>
-    <div class="buttons">
-      <a class="btn" href="https://wa.me/5219381410042" target="_blank">WhatsApp</a>
-      <a class="btn" href="https://www.linkedin.com/in/hebes-zamudio-739047101" target="_blank">LinkedIn</a>
-      <a class="btn" href="https://www.behance.net/imaginariostudio" target="_blank">Behance</a>
-    </div>
-  </section>
-
-  <footer>Mérida, Yucatán, México</footer>
+  <div class="archive-gallery" id="gallery"></div>
+</section>
 
 </div>
 
-<script>
-  const elements = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.getAttribute('data-delay') || 0;
-        entry.target.style.transitionDelay = `${delay}ms`;
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <img id="lightboxImg">
+</div>
 
-  elements.forEach(el => observer.observe(el));
+<script>
+/*
+  IMPORTANTE:
+  Solo agrega o quita archivos aquí.
+  Respeta exactamente nombres y extensiones.
+*/
+
+const BASE_PATH = "assets/images/Portafolio/";
+
+const archive = {
+  "Comunicacion Interna": [
+    "ci-01.jpg",
+    "ci-02.jpg"
+  ],
+  "Eventos": [
+    "evento-01.jpg",
+    "evento-02.jpg"
+  ],
+  "IA": [
+    "ia-01.jpg"
+  ],
+  "Limitless": [
+    "limitless-01.jpg"
+  ],
+  "Logos": [
+    "logo-01.png",
+    "logo-02.png"
+  ],
+  "Material de Venta": [
+    "venta-01.jpg",
+    "venta-02.jpg"
+  ],
+  "Mockups": [
+    "mockup-01.jpg"
+  ],
+  "Planos": [
+    "plano-01.jpg"
+  ],
+  "Presentaciones": [
+    "ppt-01.jpg"
+  ],
+  "Redes Sociales": [
+    "rs-01.jpg",
+    "rs-02.jpg"
+  ],
+  "Video": [
+    "video-cover-01.jpg"
+  ]
+};
+
+const gallery = document.getElementById("gallery");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+
+document.querySelectorAll(".archive-list li").forEach(item => {
+  item.addEventListener("click", () => {
+    const category = item.dataset.category;
+    gallery.innerHTML = "";
+
+    if (!archive[category]) return;
+
+    archive[category].forEach(file => {
+      const img = document.createElement("img");
+      img.src = `${BASE_PATH}${category}/${file}`;
+      img.loading = "lazy";
+
+      img.onclick = () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+      };
+
+      gallery.appendChild(img);
+    });
+  });
+});
+
+lightbox.onclick = () => {
+  lightbox.style.display = "none";
+};
 </script>
 
 </body>

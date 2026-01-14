@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Hebes Zamudio · Archivo Visual</title>
+<title>Hebes Zamudio · Lead Designer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -14,68 +14,117 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 960px;
   margin: auto;
   padding: 80px 24px;
 }
 
 h1 {
-  font-size: 18px;
-  font-weight: 400;
-  color: #9a9a9a;
-  margin-bottom: 32px;
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
-.categories {
+h2 {
+  font-size: 16px;
+  color: #9a9a9a;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+p {
+  max-width: 680px;
+  color: #d6d6d6;
+  line-height: 1.6;
+}
+
+section {
+  margin-bottom: 120px;
+}
+
+/* Selected Work */
+
+.work-item {
+  border-top: 1px solid #2f2f2f;
+  padding-top: 40px;
+  margin-bottom: 80px;
+}
+
+.work-item h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.work-meta {
+  font-size: 13px;
+  color: #9a9a9a;
+  margin-bottom: 16px;
+}
+
+.snapshot img {
+  width: 100%;
+  max-width: 720px;
+  opacity: .9;
+}
+
+.work-desc {
+  font-size: 14px;
+  color: #bdbdbd;
+  max-width: 680px;
+  margin-top: 14px;
+}
+
+/* Archive */
+
+.archive h2 {
+  margin-bottom: 24px;
+}
+
+.archive-categories {
   display: flex;
   flex-wrap: wrap;
-  gap: 22px;
+  gap: 20px;
   font-size: 14px;
-  margin-bottom: 40px;
   color: #bdbdbd;
-}
-
-.categories span {
   cursor: pointer;
-  transition: opacity .25s ease;
 }
 
-.categories span:hover {
+.archive-categories span:hover {
   opacity: .6;
 }
 
-.gallery {
+.archive-gallery {
+  margin-top: 36px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
+  gap: 14px;
 }
 
-.gallery img {
+.archive-gallery img {
   width: 100%;
-  display: block;
-  cursor: pointer;
   opacity: .9;
-  transition: opacity .3s ease;
-}
-
-.gallery img:hover {
-  opacity: 1;
+  cursor: pointer;
 }
 
 /* Lightbox */
+
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(15,15,15,.96);
+  background: rgba(15,15,15,.95);
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 999;
 }
 
 .lightbox img {
   max-width: 90%;
   max-height: 90%;
+}
+
+footer {
+  font-size: 12px;
+  color: #6f6f6f;
 }
 </style>
 </head>
@@ -83,23 +132,67 @@ h1 {
 <body>
 <div class="container">
 
-<h1>Archive</h1>
+<!-- HERO -->
+<section>
+  <h1>Hebes Zamudio</h1>
+  <h2>Lead Designer · Branding · Comunicación Visual Estratégica</h2>
+</section>
 
-<div class="categories">
-  <span data-cat="ci">Comunicación Interna</span>
-  <span data-cat="eventos">Eventos</span>
-  <span data-cat="ia">IA</span>
-  <span data-cat="limitless">Limitless</span>
-  <span data-cat="logos">Logos</span>
-  <span data-cat="venta">Material de Venta</span>
-  <span data-cat="mockups">Mockups</span>
-  <span data-cat="planos">Planos</span>
-  <span data-cat="presentaciones">Presentaciones</span>
-  <span data-cat="redes">Redes Sociales</span>
-  <span data-cat="video">Video</span>
-</div>
+<!-- ABOUT -->
+<section>
+  <p>
+    Diseño sistemas visuales para marcas y proyectos que requieren claridad,
+    consistencia y dirección. Trabajo desde la estrategia visual hasta la
+    ejecución, con enfoque en comunicación interna, branding y universos gráficos.
+  </p>
+</section>
 
-<div class="gallery" id="gallery"></div>
+<!-- SELECTED WORK -->
+<section>
+  <h2>Selected Work</h2>
+
+  <div class="work-item">
+    <h3>MB Resort Orlando</h3>
+    <div class="work-meta">Branding · Identidad Visual · Comunicación Interna</div>
+    <div class="snapshot">
+      <img src="assets/images/Portafolio/Limitless/limitless-01.jpg" alt="">
+    </div>
+    <div class="work-desc">
+      Desarrollo del sistema visual y narrativa gráfica para proyecto
+      inmobiliario de alto nivel.
+    </div>
+  </div>
+
+  <div class="work-item">
+    <h3>MB Hotel</h3>
+    <div class="work-meta">Branding · Propuesta Visual</div>
+    <div class="snapshot">
+      <img src="assets/images/Portafolio/Mockups/mockup-01.jpg" alt="">
+    </div>
+    <div class="work-desc">
+      Construcción del universo visual para proyecto hotelero en desarrollo.
+    </div>
+  </div>
+
+</section>
+
+<!-- ARCHIVE -->
+<section class="archive">
+  <h2>Archive</h2>
+
+  <div class="archive-categories">
+    <span data-cat="ci">Comunicación Interna</span>
+    <span data-cat="eventos">Eventos</span>
+    <span data-cat="ia">IA</span>
+    <span data-cat="logos">Logos</span>
+    <span data-cat="venta">Material de Venta</span>
+    <span data-cat="redes">Redes Sociales</span>
+  </div>
+
+  <div class="archive-gallery" id="archiveGallery"></div>
+</section>
+
+<footer>Mérida, Yucatán · México</footer>
 
 </div>
 
@@ -108,19 +201,13 @@ h1 {
 </div>
 
 <script>
-const gallery = document.getElementById("gallery");
+const gallery = document.getElementById("archiveGallery");
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 
-/* 
-  RUTAS ESCRITAS DE FORMA SEGURA
-  👉 aquí NO hay concatenaciones peligrosas
-*/
-
-const data = {
+const archive = {
   ci: [
-    "assets/images/Portafolio/Comunicacion Interna/ci-01.jpg",
-    "assets/images/Portafolio/Comunicacion Interna/ci-02.jpg"
+    "assets/images/Portafolio/Comunicacion Interna/ci-01.jpg"
   ],
   eventos: [
     "assets/images/Portafolio/Eventos/evento-01.jpg"
@@ -128,48 +215,28 @@ const data = {
   ia: [
     "assets/images/Portafolio/IA/ia-01.jpg"
   ],
-  limitless: [
-    "assets/images/Portafolio/Limitless/limitless-01.jpg"
-  ],
   logos: [
-    "assets/images/Portafolio/Logos/logo-01.png",
-    "assets/images/Portafolio/Logos/logo-02.png"
+    "assets/images/Portafolio/Logos/logo-01.png"
   ],
   venta: [
     "assets/images/Portafolio/Material de Venta/venta-01.jpg"
   ],
-  mockups: [
-    "assets/images/Portafolio/Mockups/mockup-01.jpg"
-  ],
-  planos: [
-    "assets/images/Portafolio/Planos/plano-01.jpg"
-  ],
-  presentaciones: [
-    "assets/images/Portafolio/Presentaciones/PRESENTACIÓN INTERNATIONAL ELITE/ppt-01.jpg"
-  ],
   redes: [
     "assets/images/Portafolio/Redes Sociales/rs-01.jpg"
-  ],
-  video: [
-    "assets/images/Portafolio/Video/video-cover-01.jpg"
   ]
 };
 
-document.querySelectorAll(".categories span").forEach(item => {
-  item.onclick = () => {
-    const key = item.dataset.cat;
+document.querySelectorAll(".archive-categories span").forEach(el => {
+  el.onclick = () => {
+    const key = el.dataset.cat;
     gallery.innerHTML = "";
-
-    data[key].forEach(src => {
+    archive[key].forEach(src => {
       const img = document.createElement("img");
       img.src = src;
-      img.loading = "lazy";
-
       img.onclick = () => {
         lightboxImg.src = src;
         lightbox.style.display = "flex";
       };
-
       gallery.appendChild(img);
     });
   };

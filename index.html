@@ -14,45 +14,53 @@ body {
 }
 
 .container {
-  max-width: 960px;
+  max-width: 980px;
   margin: auto;
   padding: 80px 24px;
-}
-
-h1 {
-  font-size: 42px;
-  font-weight: 500;
-  margin-bottom: 8px;
-}
-
-h2 {
-  font-size: 16px;
-  color: #9a9a9a;
-  font-weight: 400;
-  margin-bottom: 40px;
-}
-
-p {
-  max-width: 680px;
-  color: #d6d6d6;
-  line-height: 1.6;
 }
 
 section {
   margin-bottom: 120px;
 }
 
-/* Selected Work */
+h1 {
+  font-size: 44px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9a9a9a;
+  margin-bottom: 32px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+p {
+  max-width: 720px;
+  color: #d6d6d6;
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+/* HERO */
+
+.hero h2 {
+  margin-bottom: 0;
+}
+
+/* SELECTED WORK */
 
 .work-item {
   border-top: 1px solid #2f2f2f;
   padding-top: 40px;
   margin-bottom: 80px;
-}
-
-.work-item h3 {
-  font-size: 18px;
-  margin-bottom: 6px;
 }
 
 .work-meta {
@@ -64,7 +72,8 @@ section {
 .snapshot img {
   width: 100%;
   max-width: 720px;
-  opacity: .9;
+  display: block;
+  opacity: .92;
 }
 
 .work-desc {
@@ -72,13 +81,10 @@ section {
   color: #bdbdbd;
   max-width: 680px;
   margin-top: 14px;
+  line-height: 1.6;
 }
 
-/* Archive */
-
-.archive h2 {
-  margin-bottom: 24px;
-}
+/* ARCHIVE */
 
 .archive-categories {
   display: flex;
@@ -106,7 +112,7 @@ section {
   cursor: pointer;
 }
 
-/* Lightbox */
+/* LIGHTBOX */
 
 .lightbox {
   position: fixed;
@@ -122,9 +128,12 @@ section {
   max-height: 90%;
 }
 
+/* FOOTER */
+
 footer {
   font-size: 12px;
   color: #6f6f6f;
+  margin-top: 80px;
 }
 </style>
 </head>
@@ -133,7 +142,7 @@ footer {
 <div class="container">
 
 <!-- HERO -->
-<section>
+<section class="hero">
   <h1>Hebes Zamudio</h1>
   <h2>Lead Designer · Branding · Comunicación Visual Estratégica</h2>
 </section>
@@ -141,9 +150,11 @@ footer {
 <!-- ABOUT -->
 <section>
   <p>
-    Diseño sistemas visuales para marcas y proyectos que requieren claridad,
-    consistencia y dirección. Trabajo desde la estrategia visual hasta la
-    ejecución, con enfoque en comunicación interna, branding y universos gráficos.
+    Diseñador gráfico especializado en la construcción de sistemas visuales
+    para marcas y proyectos que requieren claridad, coherencia y dirección.
+    Mi trabajo se enfoca en transformar conceptos complejos en estructuras
+    visuales funcionales, alineando identidad, comunicación interna y objetivos
+    de negocio.
   </p>
 </section>
 
@@ -158,8 +169,9 @@ footer {
       <img src="assets/images/Portafolio/Limitless/limitless-01.jpg" alt="">
     </div>
     <div class="work-desc">
-      Desarrollo del sistema visual y narrativa gráfica para proyecto
-      inmobiliario de alto nivel.
+      Desarrollo y dirección del sistema visual del proyecto, estableciendo
+      lineamientos gráficos, narrativa visual y materiales de comunicación
+      interna y comercial.
     </div>
   </div>
 
@@ -170,14 +182,15 @@ footer {
       <img src="assets/images/Portafolio/Mockups/mockup-01.jpg" alt="">
     </div>
     <div class="work-desc">
-      Construcción del universo visual para proyecto hotelero en desarrollo.
+      Construcción del universo visual y propuesta gráfica para proyecto
+      hotelero en desarrollo, asegurando consistencia con la marca madre.
     </div>
   </div>
 
 </section>
 
 <!-- ARCHIVE -->
-<section class="archive">
+<section>
   <h2>Archive</h2>
 
   <div class="archive-categories">
